@@ -210,8 +210,9 @@ async def extract(req: ExtractRequest):
     ydl_opts = {
         "quiet": True,
         "no_warnings": True,
-        "format": "bestvideo+bestaudio/best",
+        "format": "bestvideo[ext=mp4][vcodec^=avc1]+bestaudio[ext=m4a]/best[ext=mp4]/best",
         "noplaylist": True,
+        "merge_output_format": "mp4",
     }
 
     cookie_file = os.getenv("COOKIE_FILE")
