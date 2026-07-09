@@ -187,6 +187,15 @@ def _build_qualities(
     return qualities
 
 
+@app.get("/")
+async def root():
+    return {
+        "status": "online",
+        "service": "BelFetch API",
+        "version": "1.0",
+    }
+
+
 @app.get("/health")
 async def health():
     return {"status": "ok"}
